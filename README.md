@@ -2,12 +2,16 @@
 mybatis自动生成的maven骨架
 #一、简介
 1.对maven骨架的学习
+
 2.使用maven骨架生成一个项目的通用demo方便后面的开发操作
 
 #二、项目的使用
 1.首先下载项目
-2.在本地执行命令 mvn eclipse:eclipse  
+
+2.在本地执行命令 mvn eclipse:eclipse
+
 3.将项目导入到eclipse中执行 mvn clean install
+
 4.执行完成上面的命令之后，在想要创建项目demo的目录执行下面的命令:
 mvn archetype:generate -DarchetypeCatalog=local
 
