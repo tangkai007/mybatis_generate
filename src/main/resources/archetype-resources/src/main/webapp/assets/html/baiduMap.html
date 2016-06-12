@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MS4zlH39EpbXoCDULNaD2xuZ"></script>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/library/DistanceTool/1.2/src/DistanceTool_min.js"></script>-->
+    <title>地图展示</title>
+
+</head>
+<body>
+    <div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+    var map = new BMap.Map("allmap");
+    map.centerAndZoom('上海',15);
+    map.enableScrollWheelZoom(); //启用滚轮放大缩小，默认禁用
+    map.enableContinuousZoom(); //启用地图惯性拖拽，默认禁用
+    map.addControl(new BMap.NavigationControl()); //添加默认缩放平移控件
+    var pointLng;
+    var pointLat;
+    map.addEventListener("click", function(e) {
+        pointLng = e.point.lng;
+        pointLat = e.point.lat;
+
+        map.setCenter(new BMap.Point(pointLng,pointLat));
+        map.clearOverlays();
+        var marker = new BMap.Marker(new BMap.Point(pointLng,pointLat));
+        map.addOverlay(marker);
+    });
+
+    // 用经纬度设置地图中心点
+    function theLocation(longitude,latitude){
+        if(longitude && latitude){
+            map.setCenter(new BMap.Point(longitude,latitude));
+            map.clearOverlays();
+            var marker = new BMap.Marker(new BMap.Point(longitude,latitude));
+            map.addOverlay(marker);
+        }
+    }
+
+    //根据地址获取坐标
+    function getLocationByAddress(city,address){
+        if(address){
+            var myGeo = new BMap.Geocoder();
+            myGeo.getPoint(address, function(point){
+                if (point) {
+                    map.centerAndZoom(point, 17);
+                    map.addOverlay(new BMap.Marker(point));
+                    pointLng = point.lng;
+                    pointLat = point.lat;
+                }
+            }, city);
+        }
+    }
+</script>
+
+

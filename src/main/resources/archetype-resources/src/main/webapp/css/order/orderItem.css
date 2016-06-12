@@ -1,0 +1,95 @@
+
+table, tr, td {
+    border: 1px solid;
+    height: auto;
+    width: 100%;
+}
+
+tr, td {
+    width: auto;
+}
+
+thead {
+    background-color: #87c8cc;
+}
+
+table {
+    margin-left: 1px;
+}
+
+.orderItem-table-list {
+    margin-left: auto;
+
+}
+
+.foot_td, td {
+    colspan: 3;
+}
+
+.orderItem_label {
+    margin-top: 20px;
+}
+
+.orderItemList {
+    border-top: 1px solid;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 100%;
+    height: 100px;
+}
+
+.blank10 {
+    width: 100%;
+    height: 20px;
+}
+
+/*
+ * 订单商品数据表格的css
+ */
+.item {
+    width: 90%;
+    height: auto;
+    border: 1px solid;
+}
+
+.storeItem {
+    border-top: 1px solid;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 100%;
+    height: 400px;
+}
+
+/*
+ * 用户信息
+ */
+.orderUserItem {
+    border-top: 1px solid;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+}
+
+/*
+ * 订单转单信息
+ */
+.orderTransferItem {
+    border-top: 1px solid;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+}
+
+.order-title {
+    margin-bottom: 5px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 5px;
+}

@@ -1,0 +1,79 @@
+<archetype-descriptor
+	xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+	name="simple" partial="false">
+	<fileSets>
+		<!-- java文件 -->
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<!-- 资源目录下的配置文件信息 -->
+		<fileSet filtered="true" packaged="false" encoding="UTF-8">
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*.properties</include>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/main/webapp</directory>
+			<includes>
+				<include>**/*.jsp</include>
+				<include>**/*.xml</include>
+				<include>**/*.html</include>
+				<include>**/*.txt</include>
+			</includes>
+		</fileSet>
+		<!-- web资源 -->
+		<fileSet  encoding="UTF-8">
+			<directory>src/main/webapp</directory>
+			<includes>
+				<include>**/*.</include>
+				<include>**/*.db</include>
+				<include>**/*.woff2</include>
+				<include>**/*.svg</include>
+				<include>**/*.woff</include>
+				<include>**/*.scss</include>
+				<include>**/*.ttf</include>
+				<include>**/*.js</include>
+				<include>**/*.swf</include>
+				<include>**/*.jpg</include>
+				<include>**/*.eot</include>
+				<include>**/*.json</include>
+				<include>**/*.png</include>
+				<include>**/*.otf</include>
+				<include>**/*.css</include>
+				<include>**/*.gif</include>
+				<include>**/*.less</include>
+			</includes>
+		</fileSet>
+
+		<!-- junit测试文件 -->
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/test/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+
+	</fileSets>
+
+	<requiredProperties>
+		<requiredProperty key="groupId">
+			<defaultValue>com.ytx</defaultValue>
+		</requiredProperty>
+
+		<requiredProperty key="artifactId">
+			<defaultValue>springDemo</defaultValue>
+		</requiredProperty>
+
+		<requiredProperty key="version">
+			<defaultValue>1.0.0-SNAPSHOT</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+</archetype-descriptor>
